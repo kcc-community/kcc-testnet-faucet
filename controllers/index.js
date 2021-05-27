@@ -6,7 +6,6 @@ module.exports = function (app) {
   var validateCaptcha = app.validateCaptcha;
 
   app.post('/', function (request, response) {
-    console.log(request.body);
     var recaptureResponse = request.body.captcha;
     if (!recaptureResponse)
       return generateErrorResponse(response, {
@@ -18,10 +17,8 @@ module.exports = function (app) {
     var receiver = request.body.receiver;
     var tokenAddress = request.body.tokenAddress;
 
-    validateCaptchaResponse(null, null, receiver, response, tokenAddress);
-
     validateCaptcha(recaptureResponse, function (err, out) {
-      validateCaptchaResponse(err, out, receiver, response);
+      validateCaptchaResponse(err, out, receiver, response, tokenAddress);
     });
   });
 
