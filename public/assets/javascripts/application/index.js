@@ -12,7 +12,7 @@ $(function () {
       type: 'POST',
       data: {
         receiver: receiver,
-        captcha: captcha,
+        captcha: 599,
         tokenAddress: tokenAddress,
       },
     })

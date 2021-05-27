@@ -22,7 +22,7 @@
     "sass": "gulp sass",
     "coffee": "gulp javascript",
     "watch": "gulp watch",
-    "start": "http-server -a 0.0.0.0 -p 3003"
+    "start": "http-server -a 0.0.0.0 -p 3000"
   },
   "repository": {
     "type": "git",
