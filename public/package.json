@@ -1,7 +1,7 @@
 {
-  "name": "oracles-faucet-front",
+  "name": "kcc-testnet-faucet-front",
   "version": "1.0.0",
-  "description": "Sokol testnet POA Network network faucet frontend",
+  "description": "kcc testnet POA Network network faucet frontend",
   "main": "gulpfile.js",
   "devDependencies": {
     "gulp": "^3.9.1",
@@ -26,9 +26,9 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://git.heroku.com/oraclesfaucet.git"
+    "url": "https://github.com/kucoin-community-chain/kcc-testnet-faucet.git"
   },
   "keywords": [],
-  "author": "Oraclesorg",
+  "author": "kcc",
   "license": "MIT"
 }

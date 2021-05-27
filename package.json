@@ -1,16 +1,16 @@
 {
-  "name": "poa-network-sokol-faucet",
+  "name": "kcc-testnet-faucet",
   "version": "1.0.0",
-  "description": "Sokol tetnet POA Network faucet",
+  "description": "Kcc tetnet POA Network faucet",
   "main": "index.js",
   "scripts": {
     "start": "node index.js"
   },
   "repository": {
     "type": "git",
-    "url": "https://git.heroku.com/faucet-sokol.git"
+    "url": "https://github.com/kucoin-community-chain/kcc-testnet-faucet.git"
   },
-  "author": "poanetwork",
+  "author": "kcc",
   "license": "MIT",
   "dependencies": {
     "body-parser": "^1.17.1",
