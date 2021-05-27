@@ -1,0 +1,16 @@
+{
+  "environment": "live",
+  "debug": false,
+  "Captcha": {
+    "secret": "xxx"
+  },
+  "Ethereum": {
+    "etherToTransfer": 15,
+    "gasLimit": "0x10b0c",
+    "live": {
+      "rpc": "https://rpc-testnet.kcc.network",
+      "account": "0xa6fD2503fcF6xxxxx40651D01D9",
+      "privateKey": "xxx"
+    }
+  }
+}
