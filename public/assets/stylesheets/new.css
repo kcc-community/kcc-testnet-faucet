@@ -82,3 +82,44 @@ h2 a {
 .request-tokens:hover {
   opacity: 1;
 }
+
+.loading-container {
+  background: linear-gradient(180deg, #ddf1ebe1, #f7f8f9);
+}
+.loading-i {
+  background: #00ba83;
+}
+
+.swal2-title {
+  font-size: 24px !important;
+  margin-top: -40px !important;
+}
+
+.swal2-styled {
+  background: #00d89e !important;
+  font-size: 14px !important;
+  width: 100% !important;
+}
+
+.swal2-content {
+  font-size: 14px !important;
+}
+
+.swal2-icon {
+  transform: scale(0.5) !important;
+}
+
+.swal2-modal {
+  z-index: 3;
+  background: linear-gradient(360deg, #d6f7ed, #fff) !important;
+}
+.swal2-success-circular-line-left {
+  background: transparent !important;
+}
+.swal2-success-fix {
+  background: transparent !important;
+}
+
+.swal2-success-circular-line-right {
+  background: transparent !important;
+}

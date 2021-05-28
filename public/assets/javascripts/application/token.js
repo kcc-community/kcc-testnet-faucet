@@ -1,3 +1,6 @@
+/* var loader = $('.loading-container');
+loader.removeClass('hidden'); */
+
 const tokenConfig = {
   name: 'KCC Testnet Faucet Token List',
   timestamp: '2021-05-26 17:42:58',
