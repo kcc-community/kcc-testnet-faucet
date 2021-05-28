@@ -38,7 +38,6 @@ $(function () {
     var captcha = $('#g-recaptcha-response').val();
     var tokenAddress = $('#tokenList').val();
     var tokenRawText = $('#tokenList option:selected').text();
-    console.log(tokenRawText);
     var tokenName = /[A-Z]+$/g.exec(tokenRawText)[0];
     $.ajax({
       url: '/',
