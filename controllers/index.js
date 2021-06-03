@@ -5,6 +5,15 @@ module.exports = function (app) {
   var configureWeb3 = app.configureWeb3;
   var validateCaptcha = app.validateCaptcha;
 
+  const InvalidAddressSet = new Set();
+
+  app.set('InvalidAddressSet', InvalidAddressSet);
+
+  const applyKCSToday = (address) => {
+    const receivedList = app.get('InvalidAddressSet');
+    return receivedList.has(address);
+  };
+
   app.post('/', function (request, response) {
     var recaptureResponse = request.body.captcha;
     if (!recaptureResponse)
@@ -16,6 +25,17 @@ module.exports = function (app) {
 
     var receiver = request.body.receiver;
     var tokenAddress = request.body.tokenAddress;
+
+    // When user apply for the KCS token，check the receiver status
+    if (tokenAddress === '0x0') {
+      if (applyKCSToday(receiver)) {
+        return generateErrorResponse(response, {
+          code: 500,
+          title: 'Error',
+          message: 'Have received KCS within 3 hours',
+        });
+      }
+    }
 
     validateCaptcha(recaptureResponse, function (err, out) {
       validateCaptchaResponse(err, out, receiver, response, tokenAddress);
@@ -101,7 +121,18 @@ module.exports = function (app) {
     web3.eth.sendRawTransaction(
       '0x' + serializedTx.toString('hex'),
       function (err, hash) {
-        sendRawTransactionResponse(err, hash, response);
+        if (!err) {
+          // When receiver get the KCS token, put the address into invalidAddressSet for 3 hours
+          if (tokenAddress === '0x0') {
+            const receivedList = app.get('InvalidAddressSet');
+            receivedList.add(receiver);
+            setTimeout(() => {
+              receivedList.delete(receiver);
+              app.set('InvalidAddressSet', receivedList);
+            }, 3 * 60 * 60 * 1000);
+          }
+          sendRawTransactionResponse(err, hash, response);
+        }
       }
     );
   }

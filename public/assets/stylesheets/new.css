@@ -78,6 +78,8 @@ h2 a {
 .request-tokens {
   opacity: 0.9;
   width: 435px;
+  position: relative;
+  z-index: 8;
 }
 .request-tokens:hover {
   opacity: 1;
