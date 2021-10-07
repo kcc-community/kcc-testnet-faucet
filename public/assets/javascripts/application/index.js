@@ -33,8 +33,9 @@ $(function () {
             'Success',
             `<span style="color:#00D296;font-weight:bold;">${amount} ${tokenName}</span> is successfully transfered to ` +
               receiver +
-              " in Tx<br /><a style='color:#00D296' href='https://scan-testnet.kcc.network/txs/" +
+              " in Tx<br /><a style='color:#00D296' href='https://scan-testnet.kcc.network/tx/" +
               data.success.txHash +
+              '/internal-transactions' +
               "' target='_blank'>" +
               data.success.txHash +
               '</a>',
