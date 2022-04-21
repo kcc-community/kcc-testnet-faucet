@@ -104,13 +104,6 @@ const tokenConfig = {
       decimals: 18,
     },
     {
-      name: 'USDT',
-      symbol: 'USDT',
-      address: '0x78168a28bb541e8f4E0544f2652A9878D1D3662f',
-      chainId: 322,
-      decimals: 18,
-    },
-    {
       name: 'COMP',
       symbol: 'COMP',
       address: '0x92dB35c063DD7b8D6cC0CF373130Ff83e8A08617',
